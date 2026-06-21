@@ -3,27 +3,51 @@
 from pathlib import Path
 import importlib.util
 import sys
+import types
 
 ROOT = Path(__file__).resolve().parent
 CORE = ROOT / "dynacore"
 
-# 현재 앱 폴더를 파이썬 모듈 검색 경로 맨 앞에 둔다.
+# 현재 저장소 루트를 파이썬 검색 경로에 추가
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-# 혹시 Streamlit 환경에서 dynacore 이름이 꼬이거나 다른 패키지와 충돌해도
-# 반드시 현재 저장소의 dynacore 폴더를 쓰도록 강제로 등록한다.
-if CORE.exists() and (CORE / "__init__.py").exists():
-    spec = importlib.util.spec_from_file_location(
-        "dynacore",
-        CORE / "__init__.py",
-        submodule_search_locations=[str(CORE)],
-    )
-    dynacore_module = importlib.util.module_from_spec(spec)
-    sys.modules["dynacore"] = dynacore_module
+# dynacore 폴더 자체도 검색 경로에 추가
+if str(CORE) not in sys.path:
+    sys.path.insert(0, str(CORE))
 
-    if spec.loader is not None:
-        spec.loader.exec_module(dynacore_module)
+# dynacore를 패키지로 강제 등록
+if "dynacore" not in sys.modules:
+    package = types.ModuleType("dynacore")
+    package.__path__ = [str(CORE)]
+    package.__file__ = str(CORE / "__init__.py")
+    package.__package__ = "dynacore"
+    sys.modules["dynacore"] = package
+
+
+def load_dynacore_module(module_name: str) -> None:
+    """Load dynacore.<module_name> directly from dynacore/<module_name>.py."""
+    full_name = f"dynacore.{module_name}"
+    file_path = CORE / f"{module_name}.py"
+
+    if full_name in sys.modules:
+        return
+
+    if not file_path.exists():
+        raise FileNotFoundError(f"Missing required module file: {file_path}")
+
+    spec = importlib.util.spec_from_file_location(full_name, file_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Cannot load module spec for {full_name} from {file_path}")
+
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[full_name] = module
+    spec.loader.exec_module(module)
+
+
+# app.py가 import하기 전에 dynacore 하위 모듈들을 미리 등록
+for name in ["data", "engine", "progress", "visuals", "ai"]:
+    load_dynacore_module(name)
 
 from app import main
 
