@@ -1,0 +1,1183 @@
+[
+  {
+    "name": "직선운동 미분 관계",
+    "concept_id": "rectilinear_motion",
+    "formulas": [
+      "v=\\frac{ds}{dt}",
+      "a=\\frac{dv}{dt}",
+      "a=v\\frac{dv}{ds}"
+    ],
+    "targets": [
+      "위치",
+      "속도",
+      "가속도",
+      "속력",
+      "변위"
+    ],
+    "given": [
+      "위치함수",
+      "속도",
+      "가속도",
+      "시간",
+      "거리"
+    ],
+    "motion": [
+      "직선운동",
+      "잘 모르겠다"
+    ],
+    "keywords": [
+      "s(t)",
+      "v(t)",
+      "a(s)",
+      "직선",
+      "position",
+      "velocity"
+    ],
+    "reason": "직선 위 운동이므로 s-v-a 관계를 미분/적분으로 연결하는 것이 핵심입니다.",
+    "checkpoints": [
+      "좌표축 양의 방향을 먼저 정했는가?",
+      "시간이 직접 있으면 dv/dt, 위치 관계이면 v dv/ds를 고려했는가?",
+      "단위를 일관되게 썼는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "등가속도 공식",
+    "concept_id": "constant_acceleration",
+    "formulas": [
+      "v=v_0+at",
+      "s=s_0+v_0t+\\frac{1}{2}at^2",
+      "v^2=v_0^2+2a(s-s_0)"
+    ],
+    "targets": [
+      "위치",
+      "속도",
+      "시간",
+      "거리",
+      "속력",
+      "변위"
+    ],
+    "given": [
+      "처음속도",
+      "나중속도",
+      "가속도",
+      "시간",
+      "거리"
+    ],
+    "motion": [
+      "등가속도운동",
+      "직선운동"
+    ],
+    "keywords": [
+      "constant acceleration",
+      "등가속도",
+      "free fall",
+      "일정한 가속도"
+    ],
+    "reason": "가속도가 일정할 때는 등가속도 3공식으로 위치·속도·시간을 빠르게 연결할 수 있습니다.",
+    "checkpoints": [
+      "가속도가 정말 일정한가?",
+      "중력가속도 부호를 좌표축과 맞췄는가?",
+      "시간이 없는 식 v²=v0²+2aΔs를 고려했는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "포물선 성분분리",
+    "concept_id": "projectile_motion",
+    "formulas": [
+      "x=x_0+v_{0x}t",
+      "y=y_0+v_{0y}t-\\frac{1}{2}gt^2",
+      "v_y=v_{0y}-gt"
+    ],
+    "targets": [
+      "위치",
+      "속도",
+      "시간",
+      "거리",
+      "속력",
+      "변위"
+    ],
+    "given": [
+      "처음속도",
+      "시간",
+      "높이",
+      "거리"
+    ],
+    "motion": [
+      "포물선운동",
+      "평면운동"
+    ],
+    "keywords": [
+      "projectile",
+      "thrown",
+      "launched",
+      "발사",
+      "던짐",
+      "포물선"
+    ],
+    "reason": "공기저항을 무시하는 투사체는 x방향 등속, y방향 등가속도로 분리해 푸는 것이 좋습니다.",
+    "checkpoints": [
+      "처음속도를 x,y 성분으로 나눴는가?",
+      "최고점에서는 vy만 0임을 기억했는가?",
+      "비행시간은 보통 y방정식에서 먼저 구하는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "n-t 좌표계 법선/접선 가속도",
+    "concept_id": "nt_coordinates",
+    "formulas": [
+      "a_t=\\frac{dv}{dt}",
+      "a_n=\\frac{v^2}{\\rho}",
+      "|a|=sqrt(a_t^2+a_n^2)"
+    ],
+    "targets": [
+      "가속도",
+      "속도 변화"
+    ],
+    "given": [
+      "속도",
+      "반지름",
+      "곡률반경",
+      "시간"
+    ],
+    "motion": [
+      "곡선운동",
+      "원운동",
+      "진자/원호"
+    ],
+    "keywords": [
+      "curvature",
+      "radius",
+      "normal",
+      "tangential",
+      "곡률",
+      "법선",
+      "접선",
+      "원호"
+    ],
+    "reason": "곡선 경로에서는 속력 변화와 방향 변화를 분리해야 하므로 n-t 좌표계가 적합합니다.",
+    "checkpoints": [
+      "속력 변화가 있으면 at를 계산했는가?",
+      "방향 변화는 an=v²/ρ로 계산했는가?",
+      "법선 방향이 곡률 중심 쪽임을 표시했는가?"
+    ],
+    "negative_keywords": [
+      "not circular",
+      "not a circle",
+      "원운동 아님",
+      "원형이 아니다"
+    ],
+    "not_recommended_when": []
+  },
+  {
+    "name": "원운동 선속도-각속도 관계",
+    "concept_id": "circular_motion",
+    "formulas": [
+      "v=r\\omega",
+      "a_n=r\\omega^2",
+      "a_t=r\\alpha"
+    ],
+    "targets": [
+      "속도",
+      "가속도",
+      "각속도",
+      "각가속도",
+      "속력"
+    ],
+    "given": [
+      "반지름",
+      "속도",
+      "각속도",
+      "각가속도"
+    ],
+    "motion": [
+      "원운동",
+      "회전운동"
+    ],
+    "keywords": [
+      "omega",
+      "rpm",
+      "circular",
+      "원운동",
+      "회전",
+      "각속도"
+    ],
+    "reason": "원 궤도 또는 회전하는 점의 운동은 v=rω, an=rω², at=rα로 연결됩니다.",
+    "checkpoints": [
+      "rpm을 rad/s로 변환했는가?",
+      "반지름 r 위치의 점인지 확인했는가?",
+      "접선/법선 가속도를 구분했는가?"
+    ],
+    "negative_keywords": [
+      "not circular",
+      "not a circle",
+      "원운동 아님",
+      "원형이 아니다"
+    ],
+    "not_recommended_when": []
+  },
+  {
+    "name": "극좌표 속도·가속도",
+    "concept_id": "polar_coordinates",
+    "formulas": [
+      "\\mathbf v = \\dot r\\,\\mathbf e_r + r\\dot\\theta\\,\\mathbf e_\\theta",
+      "\\mathbf a = (\\ddot r-r\\dot\\theta^2)\\mathbf e_r + (r\\ddot\\theta+2\\dot r\\dot\\theta)\\mathbf e_\\theta"
+    ],
+    "targets": [
+      "속도",
+      "가속도",
+      "속력"
+    ],
+    "given": [
+      "위치함수",
+      "반지름",
+      "각속도",
+      "각가속도"
+    ],
+    "motion": [
+      "곡선운동",
+      "원운동",
+      "평면운동"
+    ],
+    "keywords": [
+      "polar",
+      "radial",
+      "transverse",
+      "r theta",
+      "극좌표",
+      "방사",
+      "횡방향"
+    ],
+    "reason": "r과 θ가 직접 주어지거나 슬롯/레이더 문제라면 극좌표 성분으로 보는 것이 자연스럽습니다.",
+    "checkpoints": [
+      "r이 변하는가?",
+      "θ가 변하는가?",
+      "2 rdot θdot 항을 빼먹지 않았는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "상대운동 관계",
+    "concept_id": "relative_motion",
+    "formulas": [
+      "r_B=r_A+r_{B/A}",
+      "v_B=v_A+v_{B/A}",
+      "a_B=a_A+a_{B/A}"
+    ],
+    "targets": [
+      "위치",
+      "속도",
+      "가속도",
+      "속력",
+      "변위"
+    ],
+    "given": [
+      "속도",
+      "가속도",
+      "도르래",
+      "줄"
+    ],
+    "motion": [
+      "상대운동",
+      "평면운동"
+    ],
+    "keywords": [
+      "relative",
+      "with respect to",
+      "pulley",
+      "상대",
+      "기준",
+      "도르래"
+    ],
+    "reason": "둘 이상의 물체나 기준점이 움직이면 상대위치·상대속도 관계가 문제를 단순하게 만듭니다.",
+    "checkpoints": [
+      "누구를 기준으로 보는지 정했는가?",
+      "B/A와 A/B 부호를 구분했는가?",
+      "도르래 줄 길이 제약식을 세웠는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "뉴턴 제2법칙과 FBD",
+    "concept_id": "newton_second_law",
+    "formulas": [
+      "\\sum F=ma",
+      "\\sum F_x=ma_x",
+      "\\sum F_y=ma_y"
+    ],
+    "targets": [
+      "힘",
+      "가속도",
+      "수직항력",
+      "장력",
+      "마찰력"
+    ],
+    "given": [
+      "질량",
+      "힘",
+      "가속도",
+      "마찰계수",
+      "경사각",
+      "줄",
+      "도르래"
+    ],
+    "motion": [
+      "힘-가속도",
+      "경사면",
+      "마찰",
+      "직선운동",
+      "원운동"
+    ],
+    "keywords": [
+      "force",
+      "mass",
+      "acceleration",
+      "FBD",
+      "힘",
+      "질량",
+      "가속도",
+      "자유물체도"
+    ],
+    "reason": "힘과 가속도의 순간 관계가 핵심이면 자유물체도를 그린 뒤 ΣF=ma를 적용합니다.",
+    "checkpoints": [
+      "분석할 물체를 하나 정했는가?",
+      "외력만 그렸는가?",
+      "좌표축을 가속도 방향 또는 면 방향으로 잡았는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "마찰력 판단",
+    "concept_id": "friction",
+    "formulas": [
+      "f_s \\le \\mu_s N",
+      "f_k=\\mu_k N"
+    ],
+    "targets": [
+      "마찰력",
+      "힘",
+      "가속도"
+    ],
+    "given": [
+      "마찰계수",
+      "질량",
+      "힘",
+      "경사각"
+    ],
+    "motion": [
+      "마찰",
+      "경사면",
+      "힘-가속도"
+    ],
+    "keywords": [
+      "friction",
+      "rough",
+      "slip",
+      "마찰",
+      "거친",
+      "미끄러짐"
+    ],
+    "reason": "거친 면이나 미끄러짐이 있으면 수직항력을 먼저 구한 뒤 정지/운동 마찰을 구분해야 합니다.",
+    "checkpoints": [
+      "정지마찰인지 운동마찰인지 확인했는가?",
+      "정지마찰을 무조건 μsN으로 두지 않았는가?",
+      "마찰 방향은 상대 미끄러짐 경향을 방해하는가?"
+    ],
+    "negative_keywords": [
+      "frictionless",
+      "no friction",
+      "without friction",
+      "마찰 없음",
+      "마찰이 없다"
+    ],
+    "not_recommended_when": []
+  },
+  {
+    "name": "원운동 힘 방정식",
+    "concept_id": "force_in_circular_motion",
+    "formulas": [
+      "\\sum F_n = m\\frac{v^2}{r}",
+      "\\sum F_t = ma_t"
+    ],
+    "targets": [
+      "힘",
+      "수직항력",
+      "장력",
+      "가속도"
+    ],
+    "given": [
+      "질량",
+      "속도",
+      "반지름",
+      "힘",
+      "장력"
+    ],
+    "motion": [
+      "원운동",
+      "진자/원호",
+      "곡선운동"
+    ],
+    "keywords": [
+      "centripetal",
+      "loop",
+      "curve",
+      "구심",
+      "원운동",
+      "중심"
+    ],
+    "reason": "원운동에서는 중심방향 합력이 mv²/r이 되도록 방정식을 세워야 합니다.",
+    "checkpoints": [
+      "구심력을 별도의 힘으로 추가하지 않았는가?",
+      "중심 방향을 정확히 잡았는가?",
+      "최고점/최저점에서 힘 방향을 다시 확인했는가?"
+    ],
+    "negative_keywords": [
+      "not circular",
+      "not a circle",
+      "원운동 아님",
+      "원형이 아니다"
+    ],
+    "not_recommended_when": []
+  },
+  {
+    "name": "일 계산",
+    "concept_id": "work",
+    "formulas": [
+      "U=\\int F\\cdot dr",
+      "U=Fs\\cos\\theta"
+    ],
+    "targets": [
+      "일",
+      "운동에너지",
+      "속도 변화"
+    ],
+    "given": [
+      "힘",
+      "거리",
+      "힘-변위 그래프",
+      "마찰계수"
+    ],
+    "motion": [
+      "직선운동",
+      "경사면",
+      "마찰"
+    ],
+    "keywords": [
+      "work",
+      "distance",
+      "force-displacement",
+      "일",
+      "거리",
+      "힘-변위"
+    ],
+    "reason": "힘과 이동거리가 주어지면 힘의 이동방향 성분이 한 일을 계산할 수 있습니다.",
+    "checkpoints": [
+      "힘과 이동방향 사이 각도를 고려했는가?",
+      "그래프가 있으면 면적을 계산했는가?",
+      "마찰력의 일 부호를 확인했는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "일-에너지 원리",
+    "concept_id": "work_energy_principle",
+    "formulas": [
+      "T_1+\\sum U_{1\\to2}=T_2",
+      "\\sum U = \\Delta T"
+    ],
+    "targets": [
+      "속도",
+      "속도 변화",
+      "운동에너지",
+      "일",
+      "속력"
+    ],
+    "given": [
+      "질량",
+      "속도",
+      "처음속도",
+      "나중속도",
+      "거리",
+      "힘",
+      "마찰계수",
+      "스프링상수",
+      "높이"
+    ],
+    "motion": [
+      "직선운동",
+      "경사면",
+      "스프링",
+      "마찰",
+      "구름운동"
+    ],
+    "keywords": [
+      "work-energy",
+      "speed",
+      "distance",
+      "일-에너지",
+      "속도",
+      "거리"
+    ],
+    "reason": "시간 정보보다 힘이 한 일과 속도 변화가 중요하면 일-에너지 원리가 빠릅니다.",
+    "checkpoints": [
+      "운동에너지 T=1/2mv²를 썼는가?",
+      "모든 일을 빠짐없이 넣었는가?",
+      "마찰 일은 보통 음수인가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "에너지 보존",
+    "concept_id": "energy_conservation",
+    "formulas": [
+      "T_1+V_1=T_2+V_2",
+      "T_1+V_1+U_{nc}=T_2+V_2"
+    ],
+    "targets": [
+      "속도",
+      "위치에너지",
+      "운동에너지",
+      "속력"
+    ],
+    "given": [
+      "높이",
+      "스프링상수",
+      "속도",
+      "질량",
+      "마찰계수"
+    ],
+    "motion": [
+      "스프링",
+      "경사면",
+      "구름운동"
+    ],
+    "keywords": [
+      "conservation",
+      "frictionless",
+      "spring",
+      "height",
+      "에너지 보존",
+      "마찰 없음"
+    ],
+    "reason": "중력과 스프링 같은 보존력이 중심이고 마찰이 없거나 별도로 처리되면 에너지 보존식이 적합합니다.",
+    "checkpoints": [
+      "마찰/비보존 일이 있는가?",
+      "위치에너지 기준을 일관되게 잡았는가?",
+      "스프링 변형량은 자연길이 기준인가?"
+    ],
+    "negative_keywords": [
+      "friction",
+      "nonconservative work",
+      "마찰 있음",
+      "비보존 일"
+    ],
+    "not_recommended_when": []
+  },
+  {
+    "name": "충격량-운동량 원리",
+    "concept_id": "impulse_momentum_principle",
+    "formulas": [
+      "\\sum \\mathbf J = \\mathbf p_2-\\mathbf p_1",
+      "F_{avg}\\Delta t=m(v_2-v_1)"
+    ],
+    "targets": [
+      "충돌 후 속도",
+      "평균 힘",
+      "속도 변화"
+    ],
+    "given": [
+      "질량",
+      "처음속도",
+      "나중속도",
+      "접촉시간",
+      "힘-시간 그래프",
+      "충돌 전후 속도"
+    ],
+    "motion": [
+      "충돌"
+    ],
+    "keywords": [
+      "impulse",
+      "impact",
+      "average force",
+      "충격량",
+      "평균힘",
+      "접촉시간"
+    ],
+    "reason": "짧은 시간 동안 큰 힘이 작용하는 충돌/충격 문제는 충격량이 운동량 변화를 만든다고 보는 것이 좋습니다.",
+    "checkpoints": [
+      "부호와 방향을 정했는가?",
+      "평균힘인지 시간변화 힘인지 확인했는가?",
+      "충돌 중 중력 충격량을 무시해도 되는지 판단했는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "운동량 보존",
+    "concept_id": "momentum_conservation",
+    "formulas": [
+      "\\sum \\mathbf p_1=\\sum \\mathbf p_2"
+    ],
+    "targets": [
+      "충돌 후 속도",
+      "속도",
+      "속력"
+    ],
+    "given": [
+      "질량",
+      "충돌 전후 속도",
+      "처음속도",
+      "나중속도"
+    ],
+    "motion": [
+      "충돌"
+    ],
+    "keywords": [
+      "collision",
+      "explosion",
+      "momentum conservation",
+      "운동량 보존",
+      "폭발",
+      "충돌"
+    ],
+    "reason": "계 외부의 충격량이 무시되면 충돌 전후 전체 운동량을 보존시켜 속도를 구할 수 있습니다.",
+    "checkpoints": [
+      "외부충격량이 무시 가능한가?",
+      "방향별로 보존식을 세웠는가?",
+      "운동에너지가 반드시 보존되는 것은 아님을 기억했는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "반발계수 추가식",
+    "concept_id": "coefficient_of_restitution",
+    "formulas": [
+      "e=\\frac{v_{B2}-v_{A2}}{v_{A1}-v_{B1}}"
+    ],
+    "targets": [
+      "충돌 후 속도"
+    ],
+    "given": [
+      "반발계수",
+      "충돌 전후 속도",
+      "질량"
+    ],
+    "motion": [
+      "충돌"
+    ],
+    "keywords": [
+      "restitution",
+      "rebound",
+      "elastic",
+      "반발계수",
+      "튕김"
+    ],
+    "reason": "충돌 후 속도 미지수가 2개이면 운동량 보존식에 반발계수 식을 추가해 풀 수 있습니다.",
+    "checkpoints": [
+      "접근속도와 분리속도 순서를 맞췄는가?",
+      "부호 약속을 일관되게 썼는가?",
+      "e=0이면 같은 속도, e=1이면 탄성 충돌임을 기억했는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "고정축 회전운동학",
+    "concept_id": "rotation_kinematics",
+    "formulas": [
+      "v=r\\omega",
+      "a_t=r\\alpha",
+      "a_n=r\\omega^2"
+    ],
+    "targets": [
+      "속도",
+      "가속도",
+      "각속도",
+      "각가속도",
+      "속력"
+    ],
+    "given": [
+      "반지름",
+      "각속도",
+      "각가속도",
+      "각변위"
+    ],
+    "motion": [
+      "회전운동"
+    ],
+    "keywords": [
+      "fixed axis",
+      "disk",
+      "rod",
+      "rpm",
+      "고정축",
+      "원판",
+      "막대"
+    ],
+    "reason": "강체가 고정축 주위로 회전하면 각운동량과 각가속도를 각 점의 선운동으로 바꿔볼 수 있습니다.",
+    "checkpoints": [
+      "해당 점의 축에서 거리 r을 확인했는가?",
+      "모든 점의 ω는 같지만 v는 r에 따라 달라짐을 기억했는가?",
+      "rad 단위를 썼는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "토크-각가속도",
+    "concept_id": "torque_rotation_equation",
+    "formulas": [
+      "\\sum M = I\\alpha",
+      "\\mathbf M=\\mathbf r\\times\\mathbf F"
+    ],
+    "targets": [
+      "토크",
+      "각가속도",
+      "힘"
+    ],
+    "given": [
+      "토크",
+      "관성모멘트",
+      "힘",
+      "반지름",
+      "각가속도"
+    ],
+    "motion": [
+      "회전운동"
+    ],
+    "keywords": [
+      "torque",
+      "moment",
+      "angular acceleration",
+      "토크",
+      "모멘트",
+      "각가속도"
+    ],
+    "reason": "회전시키는 힘의 효과가 각가속도를 만들 때는 모멘트 방정식 ΣM=Iα를 씁니다.",
+    "checkpoints": [
+      "모멘트 기준점을 명확히 잡았는가?",
+      "힘의 수직거리, 즉 모멘트팔을 썼는가?",
+      "관성모멘트 축이 맞는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "평면 강체 상대속도",
+    "concept_id": "rigid_body_plane_motion",
+    "formulas": [
+      "\\mathbf v_B=\\mathbf v_A+\\boldsymbol\\omega\\times\\mathbf r_{B/A}",
+      "\\mathbf a_B=\\mathbf a_A+\\boldsymbol\\alpha\\times\\mathbf r_{B/A}-\\omega^2\\mathbf r_{B/A}"
+    ],
+    "targets": [
+      "속도",
+      "가속도",
+      "각속도",
+      "각가속도",
+      "속력"
+    ],
+    "given": [
+      "속도",
+      "가속도",
+      "각속도",
+      "각가속도",
+      "막대",
+      "바퀴"
+    ],
+    "motion": [
+      "평면 강체 운동",
+      "회전운동"
+    ],
+    "keywords": [
+      "plane motion",
+      "instantaneous center",
+      "link",
+      "bar",
+      "평면 강체",
+      "순간중심",
+      "링크"
+    ],
+    "reason": "강체 위 두 점의 속도/가속도 관계를 쓰면 병진과 회전을 동시에 처리할 수 있습니다.",
+    "checkpoints": [
+      "기준점 A를 잘 골랐는가?",
+      "상대속도는 r에 수직인가?",
+      "가속도 식에서 -ω²r 항을 포함했는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "구름운동 조건",
+    "concept_id": "rolling_motion",
+    "formulas": [
+      "v_G=r\\omega",
+      "a_G=r\\alpha",
+      "s_G=r\\theta"
+    ],
+    "targets": [
+      "속도",
+      "가속도",
+      "각속도",
+      "각가속도",
+      "속력"
+    ],
+    "given": [
+      "반지름",
+      "각속도",
+      "각가속도",
+      "바퀴",
+      "원판"
+    ],
+    "motion": [
+      "구름운동",
+      "평면 강체 운동"
+    ],
+    "keywords": [
+      "rolling without slipping",
+      "wheel",
+      "disk",
+      "구름",
+      "미끄러지지"
+    ],
+    "reason": "미끄러지지 않고 굴러가면 중심의 병진운동과 회전운동이 v=rω로 묶입니다.",
+    "checkpoints": [
+      "순수 구름운동인지 확인했는가?",
+      "접촉점의 순간 속도가 0임을 이해했는가?",
+      "미끄러짐이 있으면 v=rω를 쓰면 안 됨을 기억했는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "강체 일-에너지",
+    "concept_id": "rigid_body_work_energy",
+    "formulas": [
+      "T=\\frac{1}{2}mv_G^2+\\frac{1}{2}I_G\\omega^2",
+      "T_1+\\sumU=T_2"
+    ],
+    "targets": [
+      "속도",
+      "운동에너지",
+      "일",
+      "각속도",
+      "속력"
+    ],
+    "given": [
+      "질량",
+      "속도",
+      "각속도",
+      "관성모멘트",
+      "높이",
+      "스프링상수",
+      "마찰계수"
+    ],
+    "motion": [
+      "구름운동",
+      "평면 강체 운동",
+      "회전운동"
+    ],
+    "keywords": [
+      "rigid body energy",
+      "rolling energy",
+      "강체 일-에너지",
+      "회전 에너지"
+    ],
+    "reason": "강체는 병진운동에너지와 회전운동에너지를 함께 가져서 두 항을 모두 넣어야 합니다.",
+    "checkpoints": [
+      "1/2mvG²와 1/2IGω²를 둘 다 고려했는가?",
+      "관성모멘트 기준축이 질량중심인지 확인했는가?",
+      "순수 회전이면 고정축 기준 I를 쓸 수 있는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "각운동량 보존/변화",
+    "concept_id": "angular_momentum",
+    "formulas": [
+      "\\sum M_O=\\frac{dH_O}{dt}",
+      "H=I\\omega",
+      "\\mathbf H_O=\\mathbf r\\times m\\mathbf v"
+    ],
+    "targets": [
+      "각운동량",
+      "각속도",
+      "토크"
+    ],
+    "given": [
+      "토크",
+      "관성모멘트",
+      "각속도",
+      "충돌 전후 속도"
+    ],
+    "motion": [
+      "회전운동",
+      "충돌"
+    ],
+    "keywords": [
+      "angular momentum",
+      "spin",
+      "각운동량",
+      "회전 충돌",
+      "보존"
+    ],
+    "reason": "회전 충돌이나 외부모멘트가 작은 상황에서는 각운동량 보존 또는 모멘트-각운동량 관계가 유용합니다.",
+    "checkpoints": [
+      "기준점 O를 정했는가?",
+      "외부모멘트가 무시 가능한가?",
+      "관성모멘트 변화가 있으면 ω도 변하는가?"
+    ],
+    "negative_keywords": [],
+    "not_recommended_when": []
+  },
+  {
+    "name": "변위-속도-가속도 기본 관계",
+    "concept_id": "position_velocity_acceleration",
+    "formulas": [
+      "\\Delta \\mathbf r=\\mathbf r_2-\\mathbf r_1",
+      "\\mathbf v=\\frac{d\\mathbf r}{dt}",
+      "\\mathbf a=\\frac{d\\mathbf v}{dt}"
+    ],
+    "targets": [
+      "변위",
+      "위치",
+      "속도",
+      "속력",
+      "가속도"
+    ],
+    "given": [
+      "위치함수",
+      "시간",
+      "처음위치",
+      "나중위치",
+      "속도",
+      "가속도"
+    ],
+    "motion": [
+      "직선운동",
+      "평면운동",
+      "잘 모르겠다"
+    ],
+    "keywords": [
+      "displacement",
+      "position",
+      "velocity",
+      "acceleration",
+      "변위",
+      "위치함수",
+      "속도함수"
+    ],
+    "negative_keywords": [],
+    "reason": "위치·변위·속도·가속도의 정의 관계를 먼저 세우면 대부분의 운동학 문제가 정리됩니다.",
+    "checkpoints": [
+      "벡터인지 스칼라인지 구분했는가?",
+      "좌표축 양의 방향을 먼저 정했는가?",
+      "속력은 속도 벡터의 크기임을 기억했는가?"
+    ],
+    "not_recommended_when": [
+      "힘과 질량이 핵심이면 뉴턴 제2법칙을 먼저 고려합니다."
+    ]
+  },
+  {
+    "name": "속력 크기와 속도 벡터 구분",
+    "concept_id": "position_velocity_acceleration",
+    "formulas": [
+      "v=|\\mathbf v|",
+      "\\text{speed}=\\frac{ds}{dt}"
+    ],
+    "targets": [
+      "속력",
+      "속도",
+      "거리"
+    ],
+    "given": [
+      "거리",
+      "시간",
+      "속도",
+      "위치함수"
+    ],
+    "motion": [
+      "직선운동",
+      "곡선운동",
+      "평면운동"
+    ],
+    "keywords": [
+      "speed",
+      "magnitude of velocity",
+      "속력",
+      "거리",
+      "path length"
+    ],
+    "negative_keywords": [],
+    "reason": "속력은 방향이 없는 크기이고, 속도는 방향을 가진 벡터입니다. 거리와 변위를 구분해야 합니다.",
+    "checkpoints": [
+      "거리와 변위를 섞지 않았는가?",
+      "속도 성분을 구한 뒤 크기를 취해야 하는가?",
+      "곡선 경로에서는 경로 길이 s를 따로 봐야 하는가?"
+    ],
+    "not_recommended_when": [
+      "충돌 전후 속도를 묻는다면 운동량 보존/충격량을 우선 고려합니다."
+    ]
+  },
+  {
+    "name": "관성모멘트 선택",
+    "concept_id": "moment_of_inertia",
+    "formulas": [
+      "I=\\int r^2\\,dm",
+      "I=I_G+md^2",
+      "I_O=\\sum m_i r_i^2"
+    ],
+    "targets": [
+      "관성모멘트",
+      "토크",
+      "각가속도"
+    ],
+    "given": [
+      "질량",
+      "반지름",
+      "길이",
+      "막대",
+      "원판",
+      "관성모멘트",
+      "회전축"
+    ],
+    "motion": [
+      "회전운동",
+      "평면 강체 운동",
+      "구름운동"
+    ],
+    "keywords": [
+      "moment of inertia",
+      "mass moment",
+      "parallel axis",
+      "관성모멘트",
+      "회전축",
+      "막대",
+      "원판"
+    ],
+    "negative_keywords": [],
+    "reason": "강체 회전 문제에서는 질량이 회전에 얼마나 버티는지를 나타내는 관성모멘트를 먼저 골라야 합니다.",
+    "checkpoints": [
+      "회전축이 질량중심을 지나는가?",
+      "평행축 정리를 써야 하는가?",
+      "점질량인지 연속체인지 구분했는가?"
+    ],
+    "not_recommended_when": [
+      "물체를 질점으로만 볼 수 있으면 관성모멘트가 필요 없을 수 있습니다."
+    ]
+  },
+  {
+    "name": "반력·수직항력 FBD 방정식",
+    "concept_id": "free_body_diagram",
+    "formulas": [
+      "\\sum F_x=ma_x",
+      "\\sum F_y=ma_y",
+      "N \\perp \\text{contact surface}"
+    ],
+    "targets": [
+      "반력",
+      "수직항력",
+      "힘",
+      "미지수"
+    ],
+    "given": [
+      "질량",
+      "경사각",
+      "힘",
+      "마찰계수",
+      "접촉면",
+      "핀",
+      "롤러",
+      "가속도"
+    ],
+    "motion": [
+      "힘-가속도",
+      "경사면",
+      "마찰",
+      "직선운동",
+      "평면 강체 운동"
+    ],
+    "keywords": [
+      "reaction",
+      "normal force",
+      "support",
+      "pin",
+      "roller",
+      "반력",
+      "수직항력",
+      "지지점",
+      "접촉면"
+    ],
+    "negative_keywords": [],
+    "reason": "반력은 공식 하나로 외우기보다 FBD에서 접촉·지지 조건을 보고 방향과 미지수를 정해야 합니다.",
+    "checkpoints": [
+      "접촉면에 수직인 힘을 그렸는가?",
+      "핀 지지는 보통 x,y 두 반력을 갖는가?",
+      "롤러는 접촉면 수직 반력 하나인가?"
+    ],
+    "not_recommended_when": [
+      "마찰이 없다고 주어지면 마찰력 항은 제외합니다."
+    ]
+  },
+  {
+    "name": "미지수 정리와 방정식 개수 점검",
+    "concept_id": "newton_second_law",
+    "formulas": [
+      "\\text{미지수 개수} \\le \\text{독립 방정식 개수}",
+      "\\sum F=ma",
+      "\\sum M=I\\alpha"
+    ],
+    "targets": [
+      "미지수",
+      "힘",
+      "가속도",
+      "토크",
+      "반력"
+    ],
+    "given": [
+      "질량",
+      "힘",
+      "가속도",
+      "반지름",
+      "관성모멘트",
+      "구속조건"
+    ],
+    "motion": [
+      "힘-가속도",
+      "평면 강체 운동",
+      "회전운동",
+      "구름운동",
+      "잘 모르겠다"
+    ],
+    "keywords": [
+      "unknown",
+      "solve for",
+      "determine",
+      "미지수",
+      "구하라",
+      "방정식"
+    ],
+    "negative_keywords": [],
+    "reason": "문제가 막힐 때는 공식부터 찾기보다 미지수와 독립 방정식 수를 먼저 세는 것이 안전합니다.",
+    "checkpoints": [
+      "미지수를 모두 적었는가?",
+      "FBD에서 힘을 빠뜨리지 않았는가?",
+      "구름 조건이나 줄 길이 조건 같은 구속조건이 필요한가?"
+    ],
+    "not_recommended_when": [
+      "단순 정의 문제라면 미지수 점검보다 기본 공식 적용이 빠릅니다."
+    ]
+  }
+]

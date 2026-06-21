@@ -1,0 +1,260 @@
+[
+  {
+    "id": "incline_friction_01",
+    "title": "마찰 있는 경사면 블록",
+    "level": 2,
+    "concept_ids": [
+      "free_body_diagram",
+      "friction",
+      "newton_second_law"
+    ],
+    "statement": "질량 10 kg 블록이 30° 경사면 위에 있다. 운동마찰계수 μk=0.20이고 블록은 아래로 미끄러진다. 가속도를 구하라.",
+    "givens": {
+      "m": "10 kg",
+      "theta": "30 deg",
+      "mu_k": "0.20",
+      "g": "9.81 m/s^2"
+    },
+    "steps": [
+      {
+        "name": "물체 선택",
+        "prompt": "분석할 물체는?",
+        "answer": "블록 하나를 계로 잡는다.",
+        "rubric": [
+          "블록"
+        ]
+      },
+      {
+        "name": "좌표축",
+        "prompt": "좌표축은 어떻게 잡는가?",
+        "answer": "x축은 경사면 아래 방향, y축은 면에 수직 바깥 방향.",
+        "rubric": [
+          "경사면",
+          "아래",
+          "수직"
+        ]
+      },
+      {
+        "name": "FBD",
+        "prompt": "필요한 힘은?",
+        "answer": "중력 mg, 수직항력 N, 운동마찰력 fk. 마찰은 운동 반대인 경사면 위쪽.",
+        "rubric": [
+          "중력",
+          "수직항력",
+          "마찰",
+          "위쪽"
+        ]
+      },
+      {
+        "name": "방정식",
+        "prompt": "운동방정식을 세워라.",
+        "answer": "ΣFy=0: N-mg cosθ=0. ΣFx=ma: mg sinθ-μkN=ma.",
+        "rubric": [
+          "mg sin",
+          "mu",
+          "N",
+          "ma"
+        ]
+      },
+      {
+        "name": "계산",
+        "prompt": "a 값은?",
+        "answer": "a=g(sin30°-0.2cos30°)=3.21 m/s² 아래 방향.",
+        "numeric_answer": 3.21,
+        "unit": "m/s^2",
+        "tolerance": 0.08
+      }
+    ],
+    "common_errors": [
+      "마찰 방향을 아래쪽으로 그리는 오류",
+      "N=mg로 두는 오류",
+      "mg 성분에서 sin/cos를 바꾸는 오류"
+    ]
+  },
+  {
+    "id": "spring_energy_01",
+    "title": "스프링 압축과 속도",
+    "level": 2,
+    "concept_ids": [
+      "spring_potential",
+      "energy_conservation",
+      "work_energy_principle"
+    ],
+    "statement": "마찰 없는 수평면에서 질량 2 kg 물체가 k=200 N/m 스프링을 0.10 m 압축한 상태에서 놓인다. 스프링이 자연길이가 되는 순간 속도를 구하라.",
+    "givens": {
+      "m": "2 kg",
+      "k": "200 N/m",
+      "x": "0.10 m"
+    },
+    "steps": [
+      {
+        "name": "방법 선택",
+        "prompt": "왜 에너지 방법이 적절한가?",
+        "answer": "마찰이 없고 스프링 위치에너지가 운동에너지로 바뀌기 때문이다.",
+        "rubric": [
+          "마찰 없음",
+          "스프링",
+          "운동에너지"
+        ]
+      },
+      {
+        "name": "에너지식",
+        "prompt": "식을 세워라.",
+        "answer": "1/2 kx^2 = 1/2 mv^2",
+        "rubric": [
+          "1/2",
+          "kx",
+          "mv"
+        ]
+      },
+      {
+        "name": "계산",
+        "prompt": "v 값은?",
+        "answer": "v=x√(k/m)=0.10√(200/2)=1.0 m/s.",
+        "numeric_answer": 1.0,
+        "unit": "m/s",
+        "tolerance": 0.03
+      }
+    ],
+    "common_errors": [
+      "스프링 변형량 x 대신 전체 길이를 넣는 오류",
+      "마찰 없음인데 비보존 일을 넣는 오류"
+    ]
+  },
+  {
+    "id": "collision_01",
+    "title": "1차원 완전비탄성 충돌",
+    "level": 3,
+    "concept_ids": [
+      "momentum_conservation",
+      "collision"
+    ],
+    "statement": "2 kg 물체가 5 m/s로 움직이다가 정지한 3 kg 물체와 충돌해 붙어서 움직인다. 충돌 후 속도는?",
+    "givens": {
+      "m1": "2 kg",
+      "v1": "5 m/s",
+      "m2": "3 kg",
+      "v2": "0 m/s"
+    },
+    "steps": [
+      {
+        "name": "개념 선택",
+        "prompt": "왜 운동량 보존을 쓰는가?",
+        "answer": "짧은 충돌 동안 외부충격량을 무시하고 두 물체가 붙으므로 완전비탄성 충돌이다.",
+        "rubric": [
+          "운동량",
+          "외부",
+          "붙"
+        ]
+      },
+      {
+        "name": "식",
+        "prompt": "운동량 보존식을 세워라.",
+        "answer": "m1v1+m2v2=(m1+m2)v'",
+        "rubric": [
+          "m1",
+          "m2",
+          "v"
+        ]
+      },
+      {
+        "name": "계산",
+        "prompt": "v' 값은?",
+        "answer": "v'=10/5=2.0 m/s.",
+        "numeric_answer": 2.0,
+        "unit": "m/s",
+        "tolerance": 0.03
+      }
+    ],
+    "common_errors": [
+      "운동에너지 보존을 같이 쓰는 오류",
+      "충돌 후 두 물체 속도가 같다는 점을 놓치는 오류"
+    ]
+  },
+  {
+    "id": "rolling_disk_01",
+    "title": "구름운동 기본 조건",
+    "level": 3,
+    "concept_ids": [
+      "rolling_motion",
+      "rigid_body_work_energy"
+    ],
+    "statement": "반지름 0.3 m 원판이 미끄러지지 않고 구른다. 중심 속도 vG=6 m/s이면 각속도는?",
+    "givens": {
+      "r": "0.3 m",
+      "vG": "6 m/s"
+    },
+    "steps": [
+      {
+        "name": "조건",
+        "prompt": "미끄럼 없는 구름 조건은?",
+        "answer": "vG=rω",
+        "rubric": [
+          "v",
+          "r",
+          "omega",
+          "ω"
+        ]
+      },
+      {
+        "name": "계산",
+        "prompt": "ω 값은?",
+        "answer": "ω=vG/r=6/0.3=20 rad/s.",
+        "numeric_answer": 20,
+        "unit": "rad/s",
+        "tolerance": 0.1
+      }
+    ],
+    "common_errors": [
+      "v=rω에서 r을 곱해야 할지 나눠야 할지 헷갈리는 오류",
+      "rad는 무차원에 가깝지만 각속도 단위 rad/s를 표시하지 않는 오류"
+    ]
+  },
+  {
+    "id": "circular_force_01",
+    "title": "원운동에서 필요한 구심력",
+    "level": 2,
+    "concept_ids": [
+      "force_in_circular_motion",
+      "circular_motion"
+    ],
+    "statement": "질량 1000 kg 자동차가 반지름 50 m 곡선을 속력 10 m/s로 돈다. 필요한 중심방향 힘의 크기는?",
+    "givens": {
+      "m": "1000 kg",
+      "r": "50 m",
+      "v": "10 m/s"
+    },
+    "steps": [
+      {
+        "name": "방향",
+        "prompt": "가속도 방향은?",
+        "answer": "속도 방향이 아니라 원의 중심 방향이다.",
+        "rubric": [
+          "중심",
+          "방향"
+        ]
+      },
+      {
+        "name": "식",
+        "prompt": "중심방향 힘 방정식은?",
+        "answer": "ΣFn=mv²/r",
+        "rubric": [
+          "mv",
+          "r"
+        ]
+      },
+      {
+        "name": "계산",
+        "prompt": "힘은?",
+        "answer": "F=1000·10²/50=2000 N.",
+        "numeric_answer": 2000,
+        "unit": "N",
+        "tolerance": 5
+      }
+    ],
+    "common_errors": [
+      "속력이 일정하면 가속도가 0이라고 생각하는 오류",
+      "힘 방향을 접선방향으로 잡는 오류"
+    ]
+  }
+]

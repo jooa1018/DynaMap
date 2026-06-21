@@ -1,0 +1,118 @@
+[
+  {
+    "id": "block_horizontal_pull",
+    "title": "수평면 위 끌리는 블록",
+    "body": "블록",
+    "situation": "오른쪽으로 힘 P를 받아 움직이려는 블록",
+    "correct_forces": [
+      "중력 mg ↓",
+      "수직항력 N ↑",
+      "외력 P →",
+      "마찰력 f ←"
+    ],
+    "optional_forces": [
+      "장력 T →"
+    ],
+    "axis": "x 오른쪽, y 위쪽",
+    "equations": [
+      "\\sum F_x=P-f=ma_x",
+      "\\sum F_y=N-mg=0"
+    ],
+    "concept_ids": [
+      "free_body_diagram",
+      "friction",
+      "newton_second_law"
+    ]
+  },
+  {
+    "id": "incline_down",
+    "title": "경사면 위 미끄러지는 블록",
+    "body": "블록",
+    "situation": "경사면 아래로 미끄러지는 블록",
+    "correct_forces": [
+      "중력 mg ↓",
+      "수직항력 N 면에 수직",
+      "마찰력 f 경사면 위쪽"
+    ],
+    "optional_forces": [],
+    "axis": "x 경사면 아래, y 면에 수직 바깥",
+    "equations": [
+      "\\sum F_x=mg\\sin\\theta-f=ma",
+      "\\sum F_y=N-mg\\cos\\theta=0"
+    ],
+    "concept_ids": [
+      "free_body_diagram",
+      "friction",
+      "normal_force"
+    ]
+  },
+  {
+    "id": "hanging_mass",
+    "title": "줄에 매달린 질량",
+    "body": "질량 m",
+    "situation": "줄에 매달려 위아래로 움직일 수 있는 물체",
+    "correct_forces": [
+      "중력 mg ↓",
+      "장력 T ↑"
+    ],
+    "optional_forces": [],
+    "axis": "y 위쪽 또는 아래쪽 하나로 통일",
+    "equations": [
+      "\\sum F_y=T-mg=ma_y"
+    ],
+    "concept_ids": [
+      "tension",
+      "free_body_diagram"
+    ]
+  },
+  {
+    "id": "circular_car",
+    "title": "수평 원운동 자동차",
+    "body": "자동차",
+    "situation": "수평 도로에서 원형 경로를 도는 자동차",
+    "correct_forces": [
+      "중력 mg ↓",
+      "수직항력 N ↑",
+      "마찰력 f 중심방향"
+    ],
+    "optional_forces": [
+      "공기저항"
+    ],
+    "axis": "n 중심방향, t 접선방향",
+    "equations": [
+      "\\sum F_n=f=m\\frac{v^2}{r}",
+      "\\sum F_y=N-mg=0"
+    ],
+    "concept_ids": [
+      "force_in_circular_motion",
+      "friction",
+      "nt_coordinates"
+    ]
+  },
+  {
+    "id": "pin_supported_bar",
+    "title": "핀 지지 막대",
+    "body": "막대",
+    "situation": "한쪽이 핀으로 지지된 평면 강체",
+    "correct_forces": [
+      "핀 반력 A_x",
+      "핀 반력 A_y",
+      "중력 mg ↓",
+      "외력 또는 하중"
+    ],
+    "optional_forces": [
+      "모멘트 반력"
+    ],
+    "axis": "x 오른쪽, y 위쪽, 모멘트 반시계 +",
+    "equations": [
+      "\\sum F_x=ma_{Gx}",
+      "\\sum F_y=ma_{Gy}",
+      "\\sum M_G=I_G\\alpha"
+    ],
+    "concept_ids": [
+      "torque_rotation_equation",
+      "rigid_body_plane_motion",
+      "free_body_diagram"
+    ]
+  }
+]

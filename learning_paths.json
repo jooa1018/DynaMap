@@ -1,0 +1,50 @@
+[
+  {
+    "name": "입문 순서",
+    "description": "처음 동역학을 보는 학생용. 운동을 먼저 보고, 힘과 에너지를 붙입니다.",
+    "concept_ids": [
+      "position_velocity_acceleration",
+      "rectilinear_motion",
+      "constant_acceleration",
+      "xy_motion",
+      "projectile_motion",
+      "nt_coordinates",
+      "circular_motion",
+      "newton_second_law",
+      "free_body_diagram",
+      "normal_force",
+      "friction",
+      "tension"
+    ]
+  },
+  {
+    "name": "시험 대비 핵심 순서",
+    "description": "문제에서 자주 쓰는 도구 중심으로 빠르게 훑습니다.",
+    "concept_ids": [
+      "free_body_diagram",
+      "newton_second_law",
+      "nt_coordinates",
+      "force_in_circular_motion",
+      "work_energy_principle",
+      "energy_conservation",
+      "impulse_momentum_principle",
+      "momentum_conservation",
+      "torque_rotation_equation",
+      "rolling_motion"
+    ]
+  },
+  {
+    "name": "강체 집중 순서",
+    "description": "강체 운동학과 강체 운동역학을 연결합니다.",
+    "concept_ids": [
+      "angular_kinematics_basic",
+      "rotation_kinematics",
+      "moment_of_inertia",
+      "torque_rotation_equation",
+      "rigid_body_plane_motion",
+      "rolling_motion",
+      "rigid_body_work_energy",
+      "angular_momentum"
+    ]
+  }
+]
