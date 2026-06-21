@@ -1,38 +1,66 @@
 /* =========================================================
-   DynaMap UI Style
-   Clean learning-app theme + sidebar readability fix
+   DynaMap UI Style - Safe Mobile Sidebar Version
+   목적:
+   1. 전체 앱 디자인 통일
+   2. 카드, 버튼, 공식 박스, 태그 스타일 정리
+   3. 모바일 사이드바 투명 문제 해결
+   4. 사이드바 폭/위치/레이아웃은 절대 건드리지 않음
    ========================================================= */
 
-/* ---------- Global ---------- */
+
+/* =========================================================
+   1. Global Design Tokens
+   ========================================================= */
 
 :root {
   --dm-bg: #f8fafc;
   --dm-surface: #ffffff;
   --dm-surface-soft: #f1f5f9;
+
   --dm-text: #0f172a;
   --dm-muted: #64748b;
+
   --dm-border: #e2e8f0;
+
   --dm-primary: #2563eb;
+  --dm-primary-dark: #1d4ed8;
   --dm-primary-soft: #dbeafe;
+
   --dm-success: #16a34a;
   --dm-success-soft: #dcfce7;
+
   --dm-warning: #f59e0b;
   --dm-warning-soft: #fef3c7;
+
   --dm-danger: #dc2626;
   --dm-danger-soft: #fee2e2;
-  --dm-radius: 18px;
-  --dm-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+  --dm-radius-sm: 10px;
+  --dm-radius-md: 14px;
+  --dm-radius-lg: 18px;
+  --dm-radius-xl: 24px;
+
+  --dm-shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --dm-shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --dm-shadow-lg: 0 18px 44px rgba(15, 23, 42, 0.12);
 }
+
+
+/* =========================================================
+   2. App Background
+   ========================================================= */
 
 html,
 body,
 [data-testid="stAppViewContainer"] {
   background: var(--dm-bg) !important;
+  background-color: var(--dm-bg) !important;
   color: var(--dm-text) !important;
 }
 
 [data-testid="stAppViewContainer"] > .main {
   background: var(--dm-bg) !important;
+  background-color: var(--dm-bg) !important;
 }
 
 .block-container {
@@ -41,7 +69,10 @@ body,
   max-width: 1180px !important;
 }
 
-/* ---------- Typography ---------- */
+
+/* =========================================================
+   3. Typography
+   ========================================================= */
 
 h1,
 h2,
@@ -50,7 +81,7 @@ h4,
 h5,
 h6 {
   color: var(--dm-text) !important;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
 }
 
 p,
@@ -61,7 +92,19 @@ div {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* ---------- Common Cards ---------- */
+p,
+li {
+  line-height: 1.65;
+}
+
+small {
+  color: var(--dm-muted) !important;
+}
+
+
+/* =========================================================
+   4. Common Card Styles
+   ========================================================= */
 
 .dm-card,
 .dyna-card,
@@ -72,33 +115,51 @@ div {
 .concept-card,
 .step-card {
   background: var(--dm-surface) !important;
+  background-color: var(--dm-surface) !important;
   border: 1px solid var(--dm-border) !important;
-  border-radius: var(--dm-radius) !important;
-  box-shadow: var(--dm-shadow) !important;
+  border-radius: var(--dm-radius-lg) !important;
+  box-shadow: var(--dm-shadow-md) !important;
   padding: 1.25rem !important;
   color: var(--dm-text) !important;
   opacity: 1 !important;
 }
 
 .dm-soft-card,
-.dyna-soft-card {
+.dyna-soft-card,
+.soft-card {
   background: var(--dm-surface-soft) !important;
+  background-color: var(--dm-surface-soft) !important;
   border: 1px solid var(--dm-border) !important;
-  border-radius: var(--dm-radius) !important;
+  border-radius: var(--dm-radius-lg) !important;
   padding: 1rem !important;
   color: var(--dm-text) !important;
   opacity: 1 !important;
 }
 
-/* ---------- Hero / Home ---------- */
+.dm-card *,
+.dyna-card *,
+.study-card *,
+.metric-card *,
+.problem-card *,
+.feedback-card *,
+.concept-card *,
+.step-card * {
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   5. Home Hero
+   ========================================================= */
 
 .dm-hero,
 .hero,
 .today-hero {
-  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 58%, #e0f2fe 100%) !important;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 55%, #e0f2fe 100%) !important;
+  background-color: #ffffff !important;
   border: 1px solid #bfdbfe !important;
   border-radius: 28px !important;
-  box-shadow: var(--dm-shadow) !important;
+  box-shadow: var(--dm-shadow-lg) !important;
   padding: 1.5rem !important;
   color: var(--dm-text) !important;
   opacity: 1 !important;
@@ -111,7 +172,10 @@ div {
   opacity: 1 !important;
 }
 
-/* ---------- Tags / Badges ---------- */
+
+/* =========================================================
+   6. Tags / Badges / Pills
+   ========================================================= */
 
 .dm-tag,
 .tag,
@@ -121,7 +185,7 @@ div {
   align-items: center;
   gap: 0.35rem;
   background: var(--dm-primary-soft) !important;
-  color: #1d4ed8 !important;
+  color: var(--dm-primary-dark) !important;
   border: 1px solid #bfdbfe !important;
   border-radius: 999px !important;
   padding: 0.3rem 0.7rem !important;
@@ -130,30 +194,37 @@ div {
   opacity: 1 !important;
 }
 
-.dm-success {
+.dm-success,
+.success-pill {
   background: var(--dm-success-soft) !important;
   color: #166534 !important;
   border-color: #bbf7d0 !important;
 }
 
-.dm-warning {
+.dm-warning,
+.warning-pill {
   background: var(--dm-warning-soft) !important;
   color: #92400e !important;
   border-color: #fde68a !important;
 }
 
-.dm-danger {
+.dm-danger,
+.danger-pill {
   background: var(--dm-danger-soft) !important;
   color: #991b1b !important;
   border-color: #fecaca !important;
 }
 
-/* ---------- Formula Box ---------- */
+
+/* =========================================================
+   7. Formula / Math Boxes
+   ========================================================= */
 
 .dm-formula,
 .formula-box,
 .latex-box {
   background: #0f172a !important;
+  background-color: #0f172a !important;
   color: #f8fafc !important;
   border-radius: 16px !important;
   padding: 1rem !important;
@@ -169,15 +240,19 @@ div {
   opacity: 1 !important;
 }
 
-/* ---------- Buttons ---------- */
+
+/* =========================================================
+   8. Buttons
+   ========================================================= */
 
 .stButton > button {
   border-radius: 14px !important;
   border: 1px solid #cbd5e1 !important;
   background: #ffffff !important;
+  background-color: #ffffff !important;
   color: var(--dm-text) !important;
   font-weight: 700 !important;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06) !important;
+  box-shadow: var(--dm-shadow-sm) !important;
   transition: all 0.15s ease-in-out !important;
   opacity: 1 !important;
 }
@@ -186,39 +261,110 @@ div {
   border-color: var(--dm-primary) !important;
   color: var(--dm-primary) !important;
   background: #eff6ff !important;
+  background-color: #eff6ff !important;
   transform: translateY(-1px);
 }
 
 .stButton > button[kind="primary"] {
   background: var(--dm-primary) !important;
+  background-color: var(--dm-primary) !important;
   color: #ffffff !important;
   border-color: var(--dm-primary) !important;
 }
 
-/* ---------- Inputs ---------- */
+
+/* =========================================================
+   9. Inputs
+   ========================================================= */
 
 .stTextInput input,
 .stTextArea textarea,
 .stNumberInput input,
+textarea,
+input {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: var(--dm-text) !important;
+  border-radius: 12px !important;
+  opacity: 1 !important;
+}
+
 .stSelectbox div,
 .stMultiSelect div {
-  border-radius: 12px !important;
   color: var(--dm-text) !important;
   opacity: 1 !important;
 }
 
-textarea,
-input {
-  background: #ffffff !important;
+
+/* =========================================================
+   10. Progress Bar
+   ========================================================= */
+
+.stProgress > div > div > div > div {
+  background-color: var(--dm-primary) !important;
+}
+
+
+/* =========================================================
+   11. Alerts
+   ========================================================= */
+
+.stAlert {
+  border-radius: 16px !important;
+  border: 1px solid var(--dm-border) !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   12. Tables / Dataframes
+   ========================================================= */
+
+[data-testid="stDataFrame"],
+table {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   13. Expander
+   ========================================================= */
+
+.streamlit-expanderHeader {
+  font-weight: 800 !important;
   color: var(--dm-text) !important;
 }
 
+
 /* =========================================================
-   CRITICAL FIX: Streamlit Sidebar
-   모바일에서 사이드바가 투명하게 보이는 문제 해결
+   14. Glass Classes
+   메인 카드에만 약한 유리 느낌 허용.
+   사이드바에는 아래 클래스가 먹지 않도록 별도 처리함.
    ========================================================= */
 
-/* 사이드바 전체: 무조건 불투명 흰색 */
+.glass,
+.glass-card,
+.blur-card,
+.frosted {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   15. CRITICAL SIDEBAR SAFE FIX v3
+   중요:
+   여기서는 사이드바의 width, min-width, max-width,
+   position, left, margin-left, transform을 절대 건드리지 않음.
+   그래야 모바일에서 Streamlit 기본 사이드바 동작이 깨지지 않음.
+   ========================================================= */
+
+
+/* 사이드바 바깥 영역: 배경과 투명도만 고정 */
+section[data-testid="stSidebar"],
 [data-testid="stSidebar"] {
   background: #ffffff !important;
   background-color: #ffffff !important;
@@ -226,14 +372,24 @@ input {
   filter: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border-right: 1px solid var(--dm-border) !important;
-  box-shadow: 16px 0 36px rgba(15, 23, 42, 0.14) !important;
-  z-index: 999999 !important;
 }
 
+
 /* 사이드바 내부 래퍼 */
+section[data-testid="stSidebar"] > div,
 [data-testid="stSidebar"] > div,
-[data-testid="stSidebar"] > div:first-child,
+[data-testid="stSidebar"] > div:first-child {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+
+/* 사이드바 콘텐츠 */
+div[data-testid="stSidebarContent"],
 [data-testid="stSidebarContent"] {
   background: #ffffff !important;
   background-color: #ffffff !important;
@@ -243,15 +399,30 @@ input {
   -webkit-backdrop-filter: none !important;
 }
 
-/* 사이드바 안의 모든 요소는 선명하게 */
+
+/* 사이드바 안의 모든 요소 선명하게 */
+section[data-testid="stSidebar"] *,
 [data-testid="stSidebar"] *,
+div[data-testid="stSidebarContent"] *,
 [data-testid="stSidebarContent"] * {
   opacity: 1 !important;
   filter: none !important;
   text-shadow: none !important;
 }
 
-/* 사이드바 글자색 고정 */
+
+/* 사이드바 텍스트 색상 고정 */
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] h4,
+section[data-testid="stSidebar"] h5,
+section[data-testid="stSidebar"] h6,
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] div,
+section[data-testid="stSidebar"] li,
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
 [data-testid="stSidebar"] h3,
@@ -266,228 +437,161 @@ input {
   color: var(--dm-text) !important;
 }
 
-/* 사이드바 라디오 버튼 영역 */
+
+/* 사이드바 라디오 메뉴 */
+section[data-testid="stSidebar"] [role="radiogroup"],
 [data-testid="stSidebar"] [role="radiogroup"] {
   background: #ffffff !important;
+  background-color: #ffffff !important;
   opacity: 1 !important;
 }
 
+section[data-testid="stSidebar"] [role="radiogroup"] label,
 [data-testid="stSidebar"] [role="radiogroup"] label {
   background: #ffffff !important;
+  background-color: #ffffff !important;
   color: var(--dm-text) !important;
   border-radius: 12px !important;
   padding: 0.35rem 0.45rem !important;
   opacity: 1 !important;
 }
 
+
 /* 선택된 라디오 항목 강조 */
+section[data-testid="stSidebar"] [role="radio"][aria-checked="true"],
 [data-testid="stSidebar"] [role="radio"][aria-checked="true"] {
   background: var(--dm-primary-soft) !important;
+  background-color: var(--dm-primary-soft) !important;
   border-radius: 12px !important;
 }
 
+section[data-testid="stSidebar"] [role="radio"][aria-checked="true"] *,
 [data-testid="stSidebar"] [role="radio"][aria-checked="true"] * {
-  color: #1d4ed8 !important;
+  color: var(--dm-primary-dark) !important;
   font-weight: 800 !important;
 }
 
+
 /* 사이드바 버튼 */
+section[data-testid="stSidebar"] .stButton > button,
 [data-testid="stSidebar"] .stButton > button {
   width: 100% !important;
   background: #ffffff !important;
+  background-color: #ffffff !important;
   color: var(--dm-text) !important;
   border: 1px solid var(--dm-border) !important;
   border-radius: 14px !important;
   opacity: 1 !important;
 }
 
+
 /* 사이드바 입력 요소 */
+section[data-testid="stSidebar"] input,
+section[data-testid="stSidebar"] textarea,
+section[data-testid="stSidebar"] select,
 [data-testid="stSidebar"] input,
 [data-testid="stSidebar"] textarea,
 [data-testid="stSidebar"] select {
   background: #ffffff !important;
+  background-color: #ffffff !important;
   color: var(--dm-text) !important;
   border-color: var(--dm-border) !important;
   opacity: 1 !important;
 }
 
-/* 사이드바 접기/펼치기 버튼 */
+
+/* 사이드바 열기/닫기 버튼: 위치와 크기는 건드리지 않고 색상만 */
 [data-testid="stSidebarCollapseButton"] button,
-[data-testid="stSidebarCollapsedControl"] button {
+[data-testid="stSidebarCollapsedControl"] button,
+button[kind="header"] {
   background: #ffffff !important;
+  background-color: #ffffff !important;
   color: var(--dm-text) !important;
   border: 1px solid var(--dm-border) !important;
   border-radius: 12px !important;
-  box-shadow: var(--dm-shadow) !important;
   opacity: 1 !important;
 }
 
 
-/* ---------- Progress ---------- */
-
-.stProgress > div > div > div > div {
-  background-color: var(--dm-primary) !important;
-}
-
-/* ---------- Alerts ---------- */
-
-.stAlert {
-  border-radius: 16px !important;
-  border: 1px solid var(--dm-border) !important;
+/* glass 효과가 사이드바에 들어가는 것 방지 */
+section[data-testid="stSidebar"] .glass,
+section[data-testid="stSidebar"] .glass-card,
+section[data-testid="stSidebar"] .blur-card,
+section[data-testid="stSidebar"] .frosted,
+[data-testid="stSidebar"] .glass,
+[data-testid="stSidebar"] .glass-card,
+[data-testid="stSidebar"] .blur-card,
+[data-testid="stSidebar"] .frosted {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   opacity: 1 !important;
 }
 
-/* ---------- Dataframes / Tables ---------- */
-
-[data-testid="stDataFrame"],
-table {
-  border-radius: 14px !important;
-  overflow: hidden !important;
-}
-
-/* ---------- Expander ---------- */
-
-.streamlit-expanderHeader {
-  font-weight: 800 !important;
-  color: var(--dm-text) !important;
-}
-
-/* ---------- Remove unwanted transparency from custom glass classes ---------- */
-
-.glass,
-.glass-card,
-.blur-card,
-.translucent,
-.frosted {
-  opacity: 1 !important;
-}
-
-/* 단, 메인 카드의 연한 배경 느낌은 유지 */
-.glass,
-.glass-card,
-.blur-card,
-.frosted {
-  background: rgba(255, 255, 255, 0.92) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-}
 
 /* =========================================================
-   Sidebar fix v2
-   - 불투명 유지
-   - 모바일에서 메인 화면을 밀지 않도록 overlay처럼 동작
+   16. Mobile Adjustments
+   여기서도 사이드바 width/position은 건드리지 않음.
    ========================================================= */
 
-[data-testid="stSidebar"] {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  opacity: 1 !important;
-  filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border-right: 1px solid var(--dm-border) !important;
-}
-
-[data-testid="stSidebar"] > div:first-child,
-[data-testid="stSidebarContent"] {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  opacity: 1 !important;
-  filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-[data-testid="stSidebar"] *,
-[data-testid="stSidebarContent"] * {
-  opacity: 1 !important;
-  color: var(--dm-text) !important;
-}
-
-/* 데스크톱에서는 일반 사이드바처럼 */
-@media (min-width: 769px) {
-  [data-testid="stSidebar"] {
-    width: 300px !important;
-    min-width: 300px !important;
-    max-width: 300px !important;
-    box-shadow: none !important;
-  }
-
-  [data-testid="stSidebar"] > div:first-child {
-    width: 300px !important;
-    min-width: 300px !important;
-    max-width: 300px !important;
-  }
-}
-
-/* 모바일에서는 "공간을 차지하는 사이드바"가 아니라
-   "위에 떠 있는 drawer"처럼 보이게 처리 */
 @media (max-width: 768px) {
-  /* 바깥 껍데기는 레이아웃 공간을 먹지 않게 */
-  [data-testid="stSidebar"] {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    height: 100vh !important;
-    width: 0 !important;
-    min-width: 0 !important;
-    max-width: 0 !important;
-    overflow: visible !important;
-    background: transparent !important;
-    border-right: none !important;
-    box-shadow: none !important;
-    z-index: 99999 !important;
-  }
-
-  /* 실제 보이는 패널은 안쪽 div가 담당 */
-  [data-testid="stSidebar"] > div:first-child {
-    width: min(86vw, 340px) !important;
-    min-width: min(86vw, 340px) !important;
-    max-width: min(86vw, 340px) !important;
-    height: 100vh !important;
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    border-right: 1px solid var(--dm-border) !important;
-    box-shadow: 16px 0 36px rgba(15, 23, 42, 0.16) !important;
-    opacity: 1 !important;
-  }
-
-  [data-testid="stSidebarContent"] {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    opacity: 1 !important;
-  }
-
-  /* 메인 화면은 전체 폭 유지 */
-  [data-testid="stAppViewContainer"] > .main {
-    margin-left: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
   .block-container {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
     max-width: 100% !important;
   }
+
+  .dm-hero,
+  .hero,
+  .today-hero {
+    padding: 1rem !important;
+    border-radius: 22px !important;
+  }
+
+  .dm-card,
+  .dyna-card,
+  .study-card,
+  .metric-card,
+  .problem-card,
+  .feedback-card,
+  .concept-card,
+  .step-card {
+    padding: 1rem !important;
+    border-radius: 16px !important;
+  }
+
+  .dm-soft-card,
+  .dyna-soft-card,
+  .soft-card {
+    padding: 0.9rem !important;
+    border-radius: 16px !important;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
 }
 
-/* 사이드바 버튼/입력 요소 선명하게 */
-[data-testid="stSidebar"] .stButton > button,
-[data-testid="stSidebar"] input,
-[data-testid="stSidebar"] textarea,
-[data-testid="stSidebar"] select {
-  background: #ffffff !important;
-  color: var(--dm-text) !important;
-  border-color: var(--dm-border) !important;
-  opacity: 1 !important;
-}
 
-/* 접기/펼치기 버튼 */
-[data-testid="stSidebarCollapseButton"] button,
-[data-testid="stSidebarCollapsedControl"] button {
-  background: #ffffff !important;
-  color: var(--dm-text) !important;
-  border: 1px solid var(--dm-border) !important;
-  border-radius: 12px !important;
-}
+/* =========================================================
+   17. Final Safety Notes
+   이 파일에서는 사이드바에 아래 속성을 주지 않는다.
+   - width
+   - min-width
+   - max-width
+   - position
+   - left
+   - margin-left
+   - transform
+   - height: 100vh
+   이런 속성은 모바일 레이아웃을 깨뜨릴 수 있음.
+   ========================================================= */
